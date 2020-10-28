@@ -1,10 +1,9 @@
+
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # \<Library System\>
- > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
- 
- > Authors: \<[Chandler Mahkorn](https://github.com/CMahk)\> \<[Aaron Liu](https://github.com/aliu112)\> \<[Kenneth Do](https://github.com/kdo055)\>
+ Authors: \<[Chandler Mahkorn](https://github.com/CMahk)\> \<[Aaron Liu](https://github.com/aliu112)\> \<[Kenneth Do](https://github.com/kdo055)\>
  
  > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
@@ -17,28 +16,29 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > * The Library System is a tool that allows for the client to add media like books or magazines to a database, which they can then search through to find media similar to the criteria they are looking for.
+The Library System is a tool that allows for the client to add media like books or magazines to a database, which they can then search through to find media similar to the criteria they are looking for.
  > * Why is it important or interesting to you? 
- Aaron: This is an interesting project because it dips into the realm of databases and how you can use them to display information that the users needs. These needs include what books we have and possibily the location of the book like real libraries display.
  
- Chandler: I have worked with small database objects in personal projects, so I wanted to further experiment with them in a group project.
+ **Aaron:** This is an interesting project because it dips into the realm of databases and how you can use them to display information that the users needs. These needs include what books we have and possibily the location of the book like real libraries display.
  
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * Primary Programming language: C++ 14
- >   * [JSON](https://github.com/nlohmann/json) - A lightweight, test-based format that is used for sending and receiving data from a web server database.
- >   * OR [SQLITE3](https://www.sqlite.org/cintro.html) - A relational database management system that stores data without needing an order, and can search tables very quickly.
- > * Inputs and outputs
- >   * Not all inputs and outputs will be available depending on the given book. For example, a book may not a have cover or an author, or if it is an old book, it may not have a specified year when it was published.
- >   * Input: Books, magazines, movies, and other forms of consumable media.
+ **Chandler:** I have worked with small database objects in personal projects, so I wanted to further experiment with them in a group project.
+ 
+## Languages and Technologies
+ * Primary Programming language: C++ 14
+ * [JSON](https://github.com/nlohmann/json) - A lightweight, test-based format that is used for sending and receiving data from a web server database.
+* OR [SQLITE3](https://www.sqlite.org/cintro.html) - A relational database management system that stores data without needing an order, and can search tables very quickly.
+* **Inputs and outputs**
+	* Not all inputs and outputs will be available depending on the given book. For example, a book may not a have cover or an author, or if it is an old book, it may not have a specified year when it was published.
+	* **Input:** Books, magazines, movies, and other forms of consumable media.
               Specific details per product: Title, author, cover, genre, sub-genre, date published, description, price, availability, and location
- >   * Output: Same as input if applicable
+	 * **Output:** Same as input if applicable
  
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
  
- Aaron: To implement the interface of this library system I have decided to use the design pattern Facade. This is the perfect design pattern for creating the interface because it essentially hides all of the complex code that the user does not need to see. It basically will mask all the code that we use to acheive the data. The user will only see a simple webpage that will display the information they need to get their book.
+ **Aaron:** To implement the interface of this library system I have decided to use the design pattern Facade. This is the perfect design pattern for creating the interface because it essentially hides all of the complex code that the user does not need to see. It basically will mask all the code that we use to acheive the data. The user will only see a simple webpage that will display the information they need to get their book.
  
- Chandler: To create a functional database of consumable media, the Abstract Factory design pattern will be used. This design pattern can be used to create an abstract class that can then be utilized to create explicit object types for each type of media stored. This method is independent of how the object classes are designed or represented, which means that the abstract factory will function even when the explicit types are modified.
+ **Chandler:** To create a functional database of consumable media, the Abstract Factory design pattern will be used. This design pattern can be used to create an abstract class that can then be utilized to create explicit object types for each type of media stored. This method is independent of how the object classes are designed or represented, which means that the abstract factory will function even when the explicit types are modified.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
