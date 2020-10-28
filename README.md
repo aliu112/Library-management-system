@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# \<Library System\>
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
  > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
@@ -18,13 +18,20 @@
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
+ > * Why is it important or interesting to you? 
+ Aaron: This is an interesting project because it dips into the realm of databases and how you can use them to display information that the users needs. These needs include what books we have and possibily the location of the book like real libraries display.
+ 
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
  > * What will be the input/output of your project?
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
+ 
+ A: To implement the interface of this library system I have decided to use the design pattern Facade. This is the perfect design pattern for creating the interface because it essentially hides all of the complex code that the user does not need to see. It basically will mask all the code that we use to acheive the data. The user will only see a simple webpage that will display the information they need to get their book.
+ 
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ 
+ 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
