@@ -4,7 +4,7 @@
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
 # Library System
- Authors: \<[Chandler Mahkorn](https://github.com/CMahk)\> \<[Aaron Liu](https://github.com/aliu112)\> \<[Kenneth Do](https://github.com/kdo055)\>
+ Authors: \<[Chandler Mahkorn](https://github.com/CMahk)\> \<[Aaron Liu](https://github.com/aliu112)\>
  
  > ## Expectations
  > * Incorporate **three** distinct design patterns, *two* of the design patterns need to be taught in this course:
@@ -21,8 +21,6 @@ The Library System is a tool that allows for the client to add media like books 
  **Aaron:** This is an interesting project because it dips into the realm of databases and how you can use them to display information that the users needs. These needs include what books we have and possibily the location of the book like real libraries display.
  
  **Chandler:** I have worked with small database objects in personal projects, so I wanted to further experiment with them in a group project.
- 
- **Kenneth:** This will be my first time working on a database. I look forward to implementing the new things I've learned while working on this project. 
 
 ## Languages and Technologies
  * Primary Programming language: C++ 14
@@ -39,8 +37,6 @@ The Library System is a tool that allows for the client to add media like books 
 	* **Aaron:** To implement the interface of this library system I have decided to use the design pattern Facade. This is the perfect design pattern for creating the interface because it essentially hides all of the complex code that the user does not need to see. It basically will mask all the code that we use to acheive the data. The user will only see a simple webpage that will display the information they need to get their book.
  
 	* **Chandler:** To create a functional database of consumable media, the Abstract Factory design pattern will be used. This design pattern can be used to create an abstract class that can then be utilized to create explicit object types for each type of media stored. This method is independent of how the object classes are designed or represented, which means that the abstract factory will function even when the explicit types are modified.
-
-	* **Kenneth:** To communicate with the database, a Visitor design pattern will be used. This pattern works well because we can vary the execution algorithm of the element as the visitor varies. This allows us to add new operations to existing object structures without modifying the structure. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
