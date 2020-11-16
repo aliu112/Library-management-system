@@ -45,6 +45,14 @@ The Library System is a tool that allows for the client to add media like books 
 ![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/Facade.png)
 This diagram shows how I will be utilizing the facade design pattern to conceal all of the complex code from the user. The Library_Facade will be the class that the user will be interacting with to perform all the actions such as borrowing a book, logging in, creating an account, paying off an debts, etc. There are multiple classes that the facade will be essentially be assisting the facade in retreving, adding, or removing any of the necessary information. After the interface is implemented, the user will simply have to click buttons which will then call the functions within the Library_Facade class. The Library_Facade class will then utilize the other classes to correctly perform the action. For example, if the user wants to login, they will simply have to type in their username and password. The Library_Facade will then utilize the class User to check and see if the inputs values are already in the system. If it is then the user will be logged in, and if not the user will be given an error message. The bookManager is there as a place holder because Chandler will be handling the database part of the project.
  
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/Composite.png)
+This diagram describes how I will be utilizing the composite design pattern to create an interface to a functional database storing categories that then store individual books. The Library_Facade instantiates the BookManager as the Library_Facade class will be utilizing the manager to add and remove contents at will. 
+* The BookManager class contains a vector that can add or remove Category objects from itself. The BookManager can display the entire class' hierarchy of categories and books stored, or just the names of the categories it is holding. The manager can also modify a category's title, modify which category a Book object is in, or find a Book within its categories. 
+
+* The Category class also contains a vector that it uses to store Book objects, which can be added or removed whenever. The Category can find a specific Book using the overloaded findBook() function which can be called by the manager or by itself, which then returns the Book to the BookManager.
+ 
+* The Book class will contain the essential data that differentiates itself from other Books. This includes the Book's title, author, date published, number of pages, its availability, and ISBN-13 value for easy inquiry.
+ 
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II
