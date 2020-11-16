@@ -23,11 +23,11 @@ The Library System is a tool that allows for the client to add media like books 
         	* Specific details per product: Title, author, cover, genre, sub-genre, date published, description, price, availability, and location
 	* **Output:** Same as input if applicable
  
-* **Design Patterns:** Facade, Abstract Factory, Visitor
+* **Design Patterns:** Facade, Composite
 
 	* **Aaron:** To implement the interface of this library system I have decided to use the design pattern Facade. This is the perfect design pattern for creating the interface because it essentially hides all of the complex code that the user does not need to see. It basically will mask all the code that we use to acheive the data. The user will only see a simple webpage that will display the information they need to get their book.
  
-	* **Chandler:** To create a functional database of consumable media, the Abstract Factory design pattern will be used. This design pattern can be used to create an abstract class that can then be utilized to create explicit object types for each type of media stored. This method is independent of how the object classes are designed or represented, which means that the abstract factory will function even when the explicit types are modified.
+	* **Chandler:** To create a functional database of consumable media, the Composite design pattern will be used. This design pattern can be used to create an a base class that can then be utilized to create a hierarchy of objects representing the library's database. This database can then be traversed easily to present the data that the user requests, including individual books and entire categories of books.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
