@@ -23,9 +23,7 @@ The Library System is a tool that allows for the client to add media like books 
  **Chandler:** I have worked with small database objects in personal projects, so I wanted to further experiment with them in a group project.
 
 ## Languages and Technologies
- * Primary Programming language: C++ 14
- * [JSON](https://github.com/nlohmann/json) - A lightweight, test-based format that is used for sending and receiving data from a web server database.
-* OR [SQLITE3](https://www.sqlite.org/cintro.html) - A relational database management system that stores data without needing an order, and can search tables very quickly.
+* Primary Programming language: C++ 11
 * Qt (https://www.qt.io/) - Qt is a cross-platform application development framework for desktop, embedded and mobile. It is a cross-platform frontend for platform-native build systems, like GNU Make, Visual Studio and Xcode
 * **Inputs and outputs**
 	* Not all inputs and outputs will be available depending on the given book. For example, a book may not a have cover or an author, or if it is an old book, it may not have a specified year when it was published.
