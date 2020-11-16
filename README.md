@@ -21,7 +21,7 @@ The Library System is a tool that allows for the client to add media like books 
 	* Not all inputs and outputs will be available depending on the given book. For example, a book may not a have cover or an author, or if it is an old book, it may not have a specified year when it was published.
 	* **Input:** Books, user text
         	* Specific details per product: Title, author, cover, genre, sub-genre, date published, description, price, availability, and location
-	* **Output:** Same as input if applicable
+	* **Output:** Same as input if applicable (printed), book categories (printed), book hierarchy (printed), book hierarchy (text file)
  
 * **Design Patterns:** Facade, Composite
 
