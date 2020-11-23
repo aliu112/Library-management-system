@@ -8,7 +8,7 @@ TEST(UserTest, addUser){
 }
 TEST(UserTest, removeUser){
     User temp;
-    temp.addAccount("hello","world");
-    temp.removeAccount("hello", "world");
-    EXPECT_EQ(temp.isValidLogin("hello","world"), false);
+    temp.addAccount("hello2","world2");
+    temp.removeAccount("hello2", "world2");
+    EXPECT_EQ(temp.isValidLogin("hello2","world2"), false);
 }

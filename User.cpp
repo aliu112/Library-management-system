@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <stdio.h>
+
 using namespace std;
 
 User::User(){
@@ -62,21 +64,59 @@ void User::addAccount(string username, string password){
 }
 
 void User::removeAccount(string username, string password){
-   /* int flag=0;
-     for(unsigned int i=0; i< userNameList.size(); i++)
+    int flag=0;
+    string tempUser;
+    string tempPass;
+    ifstream userFile;
+    ifstream passFile;
+    userFile.open("usernameList.txt");
+    passFile.open("passwordList.txt");
+
+    ofstream userFile2;
+    ofstream passFile2;
+    userFile2.open("usernameListTemp.txt",std::ofstream::app);
+    passFile2.open("passwordListTemp.txt",std::ofstream::app);
+
+    while(!userFile.eof())
     {
-        if(userNameList.at(i)==username && passwordList.at(i) == password)
+        userFile >> tempUser;
+        passFile >> tempPass;
+        if(tempUser == username && tempPass == password)
         {
-            userNameList.erase(userNameList.begin()+i);
-            passwordList.erase(passwordList.begin()+i);
-            flag=1;
+            flag =1;
+            cout << "Account found and removed\n";
         }
-    }
+        if(tempUser != username && tempPass != password)
+        {
+            userFile2 << tempUser << endl;
+            passFile2 << tempPass << endl;
+        }
     
-    if(flag ==0){
-        cout << "Error no account with such credentials found\n";
     }
-    */
+
+    if(flag == 0)
+    {
+        cout << "Account not found\n";
+    }
+
+    userFile.close();
+    passFile.close();
+    userFile2.close();
+    passFile2.close();
+
+    remove( "usernameList.txt" );
+    remove( "passwordList.txt" );
+
+    char userOldName[] ="usernameListTemp.txt";
+    char userNewName[] ="usernameList.txt";
+
+    char passOldName[] ="passwordListTemp.txt";
+    char passNewName[] ="passwordList.txt";
+
+    rename(userOldName,userNewName);
+    rename(passOldName,passNewName );
+
+
 }
 
 bool User::getIsLoggedIn()
