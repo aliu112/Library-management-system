@@ -12,6 +12,7 @@ class LibraryFacade{
     public:
         LibraryFacade();
         void borrowBook();
+        void displayBookInfo();
         void addBook();
         bool login(string,string);
         void createAccount(string,string);

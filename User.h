@@ -12,12 +12,14 @@ class User{
         vector<string> userNameList;
         vector<string> passwordList;
         bool isAdmin;
+        bool isLoggedIn;
 
     public:
         User();
         bool isValidLogin(string, string);
         void addAccount(string, string);
         void removeAccount(string, string);
+        bool getIsLoggedIn();
 };
 
 #endif

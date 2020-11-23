@@ -8,6 +8,9 @@ LibraryFacade::LibraryFacade(){
 void LibraryFacade::borrowBook(){
 //TODO
 }
+void LibraryFacade::displayBookInfo(){
+
+}
 void LibraryFacade::addBook(){
 //TODO
 }
@@ -17,6 +20,7 @@ bool LibraryFacade::login(string username, string password){
 }
 void LibraryFacade::createAccount(string username, string password){
     user.addAccount(username,password);
+//    cout << "In create account" << endl;
 }
 void LibraryFacade::removeAccount(string username, string password){
     user.removeAccount(username,password);
