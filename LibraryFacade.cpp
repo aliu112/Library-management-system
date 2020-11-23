@@ -16,6 +16,12 @@ void LibraryFacade::addBook(){
 }
 bool LibraryFacade::login(string username, string password){
     bool temp = user.isValidLogin(username,password);
+    /*
+    if(temp == true)
+    {
+        cout << "temp is true\n";
+    }
+    */
     return temp;
 }
 void LibraryFacade::createAccount(string username, string password){

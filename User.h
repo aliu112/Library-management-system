@@ -8,9 +8,9 @@ using namespace std;
 
 class User{
     private:
-        vector<User> userList;
-        vector<string> userNameList;
-        vector<string> passwordList;
+       // vector<User> userList;
+       // vector<string> userNameList;
+       // vector<string> passwordList;
         bool isAdmin;
         bool isLoggedIn;
 
@@ -20,6 +20,7 @@ class User{
         void addAccount(string, string);
         void removeAccount(string, string);
         bool getIsLoggedIn();
+        bool getIsAdmin();
 };
 
 #endif

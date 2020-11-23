@@ -35,6 +35,7 @@ int main()
                 loggedIn = test.login(temp1, temp2);
                 if(loggedIn == true)
                 {
+                   // cout << "correctly entered break if statement\n";
                     break;
                 }
                 while (cout << "Press 1 to retry\nPress 2 to create a new account\n" && !(std::cin >> userInput)) 
@@ -43,6 +44,10 @@ int main()
                 std::cin.ignore(); //discard input
                 std::cout << "Invalid input; please re-enter.\n";
                 }
+            }
+            if(loggedIn == true)
+            {
+              break;
             }
         }
         
@@ -58,7 +63,8 @@ int main()
             loggedIn = true;
             break;
         }
-        else
+        
+        if(userInput != 1 && userInput != 2)
         {
             cout << "ERROR\n";
         }
