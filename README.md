@@ -16,7 +16,7 @@ The Library System is a tool that allows for the client to add media like books 
 
 ## Languages and Technologies
 * Primary Programming language: C++ 11
-* Qt (https://www.qt.io/) - Qt is a cross-platform application development framework for desktop, embedded and mobile. It is a cross-platform frontend for platform-native build systems, like GNU Make, Visual Studio and Xcode
+
 * **Inputs and outputs**
 	* Not all inputs and outputs will be available depending on the given book. For example, a book may not a have cover or an author, or if it is an old book, it may not have a specified year when it was published.
 	* **Input:** Books, user text
