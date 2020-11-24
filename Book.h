@@ -18,6 +18,19 @@ public:
 	// Populate virtual function
 	void print();
 
+	// Setters and getters
+	void setTitle(string title);
+	string getTitle();
+
+	void setDate(string date);
+	string getDate();
+
+	void setPages(int pages);
+	int getPages();
+
+	void setISBN13(int isbn13);
+	int getISBN13();
+
 	// Extra functions
 	bool operator == (const Book &b);
 };

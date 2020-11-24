@@ -29,6 +29,38 @@ void Book::print() {
 	std::cout << "\tAvailable: " << this->availability << std::endl;
 }
 
+void Book::setTitle(string title) {
+	this->title = title;
+}
+
+string Book::getTitle() {
+	return this->title;
+}
+
+void Book::setDate(string date) {
+	this->datePublished = date;
+}
+
+string Book::getDate() {
+	return this->datePublished;
+}
+
+void Book::setPages(int pages) {
+	this->numPages = pages;
+}
+
+int Book::getPages() {
+	return this->numPages;
+}
+
+void Book::setISBN13(int isbn13) {
+	this->isbn13 = isbn13;
+}
+
+int Book::getISBN13() {
+	return this->isbn13;
+}
+
 // Ensure that the given book is the exact one we are looking for
 bool Book::operator == (const Book &b) {
 	if (this->title == b.title &&
