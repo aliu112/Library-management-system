@@ -17,6 +17,11 @@ public:
 	// Populate virtual function
 	void print();
 
+	// Functions for vector manipulation
+	void printBooks();
+
 	void setTitle(string title);
 	string getTitle();
+
+	void add(Book*);
 };
