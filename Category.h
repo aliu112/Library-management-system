@@ -20,6 +20,8 @@ public:
 	// Functions for vector manipulation
 	void printBooks();
 
+	int bookCount();
+
 	Book* findBook(string title);
 	Book* findBook(int isbn13);
 	void add(Book*);

@@ -14,6 +14,10 @@ void Category::printBooks() {
 		book->print();
 }
 
+int Category::bookCount() {
+	return this->list.size();
+}
+
 Book* Category::findBook(string title) {
 	for (Book* book : this->list)
 		if (title == book->getTitle())
