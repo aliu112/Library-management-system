@@ -1,7 +1,7 @@
 #include "LibraryFacade.h"
 using namespace std;
 
-class User;
+//class User;
 LibraryFacade::LibraryFacade(){
 
 }
@@ -38,5 +38,5 @@ void LibraryFacade::reserveBook(){
 //TODO
 }
 void LibraryFacade::payDebt(){
-//TODO
+    
 }

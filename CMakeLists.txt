@@ -10,11 +10,13 @@ ADD_EXECUTABLE(main
     main.cpp
     LibraryFacade.cpp
     User.cpp
+    owedDebts.cpp
 )
 
 ADD_EXECUTABLE(test
     unit_test.cpp
     User.cpp
+    owedDebts.cpp
 )
 
 

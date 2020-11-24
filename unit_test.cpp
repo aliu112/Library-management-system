@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include "User_test.h"
-#include "User.h"
+#include "owedDebts_test.h"
 
 
 int main(int argc, char **argv) {

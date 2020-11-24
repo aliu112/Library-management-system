@@ -13,6 +13,7 @@ class User{
        // vector<string> passwordList;
         bool isAdmin;
         bool isLoggedIn;
+        int numInList;
 
     public:
         User();
@@ -21,6 +22,8 @@ class User{
         void removeAccount(string, string);
         bool getIsLoggedIn();
         bool getIsAdmin();
+        int GetNumInList();
+    
 };
 
 #endif

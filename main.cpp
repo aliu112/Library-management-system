@@ -1,6 +1,7 @@
 #include <iostream>
 #include "LibraryFacade.h"
 #include "User.h"
+#include "owedDebts.h"
 #include <string>
 
 using namespace std;
@@ -60,8 +61,25 @@ int main()
             string temp2;
             cin >>temp2;
             test.createAccount(temp1,temp2);
-            loggedIn = true;
-            break;
+            cout << "Now please login\n";
+            while(loggedIn != true)
+            {
+                cout << "Please enter your username: ";
+                cin >> temp1;
+                cout << "Please enter your password: ";
+                cin >>temp2;
+                loggedIn = test.login(temp1,temp2);
+                if(loggedIn ==false)
+                {
+                    cout << "Invalid login, please use the login your just created\n";
+                }
+                
+            }
+            if(loggedIn == true)
+            {
+                break;
+            }
+            
         }
         
         if(userInput != 1 && userInput != 2)
@@ -87,6 +105,35 @@ int main()
         {
             loggedIn= false;
         }
+        else if(userInput2 =="1")
+        {
+
+        }
+        else if(userInput2 =="2")
+        {
+            
+        }
+        else if(userInput2 =="3")
+        {
+            
+        }
+        else if(userInput2 =="4")
+        {
+            cout << "Reenter credentials to confirm deletion\n";
+            cout << "Enter username: ";
+            string user;
+            string pass;
+            cin >> user;
+            cout << "Enter password: ";
+            cin >> pass;
+            test.removeAccount(user,pass);
+        }
+        else
+        {
+            cout << "Invalid input\n\n";
+        }
+        
+
         
     }
     cout << "Successfully exited\n";

@@ -1,14 +1,16 @@
 #ifndef __library_facade_h__
 #define __library_facade_h__
+#include "OwedDebts.h"
 #include "User.h"
 #include <string>
 
 using namespace std;
 
 class LibraryFacade{
-    private:
+    protected:
         User user;
-
+        OwedDebts payment;      
+        
     public:
         LibraryFacade();
         void borrowBook();

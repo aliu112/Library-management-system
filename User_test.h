@@ -37,3 +37,25 @@ TEST(UserTest, TestNonExistentUser){
     EXPECT_EQ(temp.isValidLogin("aliu11", "passwor"), false);
     EXPECT_EQ(temp.isValidLogin("helo", "worl"), false);
 }
+
+TEST(UserTest, TestGetNumInList)
+{
+    User temp;
+    EXPECT_EQ(temp.isValidLogin("aliu112", "password"), true);   
+    EXPECT_EQ(temp.GetNumInList(),0);
+}
+
+TEST(UserTest, TestGetNumInList2)
+{
+    User temp;
+    EXPECT_EQ(temp.isValidLogin("test1", "test1"), true);   
+    EXPECT_EQ(temp.GetNumInList(),0);
+}
+
+TEST(UserTest, TestGetNumInList3)
+{
+    User temp;
+    EXPECT_EQ(temp.isValidLogin("test2", "test2"), false);   
+    EXPECT_EQ(temp.isValidLogin("aliu112", "password"), true);   
+    EXPECT_EQ(temp.GetNumInList(),0);
+}

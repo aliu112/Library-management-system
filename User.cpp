@@ -9,6 +9,7 @@ using namespace std;
 User::User(){
     isAdmin = false;
     isLoggedIn = false;
+    numInList=0;
 }
 
 bool User::isValidLogin(string username, string password){
@@ -25,11 +26,13 @@ bool User::isValidLogin(string username, string password){
        // cout << "ENTER WHILE LOOP \n";
         userFile >> tempUser;
         passFile >> tempPass;
+        numInList++;
         //cout << "tempUser: " << tempUser << endl;
         //cout << "passUser: " << tempPass << endl;
         if(tempUser ==username && tempPass ==  password)
         {
            // cout << "IT WORKED\n";
+           int random = GetNumInList();
             userFile.close();
             passFile.close();
             return true;
@@ -39,6 +42,7 @@ bool User::isValidLogin(string username, string password){
     userFile.close();
     passFile.close();
     cout << "No such login found\n";
+    numInList=0;
     return false;
 }
 
@@ -85,7 +89,7 @@ void User::addAccount(string username, string password){
         userFile.close();
         passFile.close();
         
-        cout << "Account has successfully created and you have been logged in\n\n";
+        cout << "Account has successfully created\n\n";
     }
 }
 
@@ -154,4 +158,19 @@ bool User::getIsLoggedIn()
 bool User::getIsAdmin()
 {
     return isAdmin;
+}
+
+int User::GetNumInList(){
+    int temp2 = numInList;
+    ofstream temp;
+    temp.open("NumInList.txt");
+    temp << numInList;
+    temp.close();
+    numInList =0;
+    
+    ifstream temp1;
+    temp1.open("NumInList.txt");
+    temp1 >> temp2;
+    temp1.close();
+    return temp2;
 }
