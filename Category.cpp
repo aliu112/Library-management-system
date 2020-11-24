@@ -22,6 +22,26 @@ string Category::getTitle() {
 	return this->title;
 }
 
+Book* Category::findBook(string title) {
+	for (Book* book : this->list)
+		if (title == book->getTitle())
+			return book;
+
+	// If no book is found, return an empty one
+	Book* noneFound = new Book("BookNotFound");
+	return noneFound;
+}
+
+Book* Category::findBook(int isbn13) {
+	for (Book* book : this->list)
+		if (isbn13 == book->getISBN13())
+			return book;
+
+	// If no book is found, return an empty one
+	Book* noneFound = new Book("BookNotFound");
+	return noneFound;
+}
+
 void Category::add(Book* book) {
 	this->list.push_back(book);
 }

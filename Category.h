@@ -23,6 +23,8 @@ public:
 	void setTitle(string title);
 	string getTitle();
 
+	Book* findBook(string title);
+	Book* findBook(int isbn13);
 	void add(Book*);
 	void remove(Book*);
 	void remove(string title);
