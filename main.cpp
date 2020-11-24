@@ -76,7 +76,10 @@ int main()
     while(loggedIn){
         cout << "Please select the following options\n";
         cout << "0. Quit\n";
-        cout << "1. \n";
+        cout << "1. Borrow a book\n";
+        cout << "2. Display a book's information\n";
+        cout << "3. payDebt\n";
+        cout << "4. Delete account\n";
         cin >> userInput2;
         // TODO Implement interface that prompts user to choose from adding
         //books, displaying books, borrowing books, etc...

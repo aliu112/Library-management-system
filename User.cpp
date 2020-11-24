@@ -43,24 +43,50 @@ bool User::isValidLogin(string username, string password){
 }
 
 void User::addAccount(string username, string password){
-    ofstream userFile;
-    ofstream passFile;
-    userFile.open("usernameList.txt",std::ofstream::app);
-    passFile.open("passwordList.txt",std::ofstream::app);
+    // check to see if the passed in username and password already exist
+    //if it does not skip writing to file
+    int flag =0;
+    string tempUser;
+    string tempPass;
 
-    if(userFile.is_open())
+    ifstream userFile2;
+    ifstream passFile2;
+    userFile2.open("usernameList.txt");
+    passFile2.open("passwordList.txt");
+    while(!userFile2.eof())
     {
-        userFile << username << endl;
-    }
-    if(passFile .is_open())
-    {
-        passFile << password << endl;
-    }
+        userFile2 >> tempUser;
+        passFile2 >> tempPass;
+        if(tempUser == username && tempPass == password)
+        {
+            flag =1;
+            cout << "Account already exists\n Logging you in now\n\n";
+        }
     
-    userFile.close();
-    passFile.close();
-    
-    cout << "Account has successfully created and you have been logged in\n";
+    }
+    userFile2.close();
+    passFile2.close();
+
+    if(flag ==0){
+        ofstream userFile;
+        ofstream passFile;
+        userFile.open("usernameList.txt",std::ofstream::app);
+        passFile.open("passwordList.txt",std::ofstream::app);
+
+        if(userFile.is_open())
+        {
+            userFile << username << endl;
+        }
+        if(passFile .is_open())
+        {
+            passFile << password << endl;
+        }
+        
+        userFile.close();
+        passFile.close();
+        
+        cout << "Account has successfully created and you have been logged in\n\n";
+    }
 }
 
 void User::removeAccount(string username, string password){
@@ -104,6 +130,7 @@ void User::removeAccount(string username, string password){
     userFile2.close();
     passFile2.close();
 
+    int temp10=0;
     remove( "usernameList.txt" );
     remove( "passwordList.txt" );
 
