@@ -14,14 +14,6 @@ void Category::printBooks() {
 		book->print();
 }
 
-void Category::setTitle(string title) {
-	this->title = title;
-}
-
-string Category::getTitle() {
-	return this->title;
-}
-
 Book* Category::findBook(string title) {
 	for (Book* book : this->list)
 		if (title == book->getTitle())

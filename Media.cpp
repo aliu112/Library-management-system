@@ -5,7 +5,15 @@ Media::Media() {
 }
 
 Media::Media(string title) {
-	this->title = title;
+	this->setTitle(title);
 }
 
 void Media::print() {}
+
+void Media::setTitle(string title) {
+	this->title = title;
+}
+
+string Media::getTitle() {
+	return this->title;
+}

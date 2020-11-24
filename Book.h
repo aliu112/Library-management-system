@@ -19,9 +19,6 @@ public:
 	void print();
 
 	// Setters and getters
-	void setTitle(string title);
-	string getTitle();
-
 	void setDate(string date);
 	string getDate();
 

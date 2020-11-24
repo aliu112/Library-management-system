@@ -14,4 +14,8 @@ public:
 
 	// Virtual function for later
 	virtual void print();
+
+	// Setter and getter
+	void setTitle(string title);
+	string getTitle();
 };

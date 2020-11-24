@@ -29,14 +29,6 @@ void Book::print() {
 	std::cout << "\tAvailable: " << this->availability << std::endl;
 }
 
-void Book::setTitle(string title) {
-	this->title = title;
-}
-
-string Book::getTitle() {
-	return this->title;
-}
-
 void Book::setDate(string date) {
 	this->datePublished = date;
 }
