@@ -13,12 +13,15 @@ public:
 	// Constructors
 	Book();
 	Book(string title);
-	Book(string title, string datePublished, int numPages, int isbn13);
+	Book(string title, string author, string datePublished, int numPages, int isbn13);
 
 	// Populate virtual function
 	void print();
 
 	// Setters and getters
+	void setAuthor(string author);
+	string getAuthor();
+
 	void setDate(string date);
 	string getDate();
 
@@ -27,6 +30,9 @@ public:
 
 	void setISBN13(int isbn13);
 	int getISBN13();
+
+	void setAvailable(bool val);
+	bool getAvailable();
 
 	// Extra functions
 	bool operator == (const Book &b);
