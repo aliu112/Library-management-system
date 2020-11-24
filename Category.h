@@ -24,4 +24,7 @@ public:
 	string getTitle();
 
 	void add(Book*);
+	void remove(Book*);
+	void remove(string title);
+	void remove(int isbn13);
 };

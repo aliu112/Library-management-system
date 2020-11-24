@@ -25,3 +25,30 @@ string Category::getTitle() {
 void Category::add(Book* book) {
 	this->list.push_back(book);
 }
+
+void Category::remove(Book* book) {
+	for (int i = 0; i < this->list.size(); i++)
+		if (book == this->list.at(i))
+		{
+			this->list.erase(this->list.begin() + i);
+			break;
+		}
+}
+
+void Category::remove(string title) {
+	for (int i = 0; i < this->list.size(); i++)
+		if (title == this->list.at(i)->getTitle())
+		{
+			this->list.erase(this->list.begin() + i);
+			break;
+		}
+}
+
+void Category::remove(int isbn13) {
+	for (int i = 0; i < this->list.size(); i++)
+		if (isbn13 == this->list.at(i)->getISBN13())
+		{
+			this->list.erase(this->list.begin() + i);
+			break;
+		}
+}
