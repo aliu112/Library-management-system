@@ -35,5 +35,5 @@ public:
 	bool isAvailable();
 
 	// Extra functions
-	bool operator == (const Book &b);
+	bool compare(Book *b);
 };

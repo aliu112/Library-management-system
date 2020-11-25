@@ -71,13 +71,9 @@ bool Book::isAvailable() {
 }
 
 // Ensure that the given book is the exact one we are looking for
-bool Book::operator == (const Book &b) {
-	if (this->title == b.title &&
-		this->author == b.author &&
-		this->isbn13 == b.isbn13 &&
-		this->datePublished == b.datePublished)
-		return true;
-
-	else
-		return false;
+bool Book::compare(Book *b) {
+	return (this->getTitle() == b->getTitle() && 
+		this->getAuthor() == b->getAuthor() && 
+		this->getISBN13() == b->getISBN13() && 
+		this->getDate() == b->getDate());
 }
