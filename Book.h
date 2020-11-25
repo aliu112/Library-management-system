@@ -32,7 +32,7 @@ public:
 	long int getISBN13();
 
 	void setAvailable(bool val);
-	bool getAvailable();
+	bool isAvailable();
 
 	// Extra functions
 	bool operator == (const Book &b);

@@ -66,7 +66,7 @@ void Book::setAvailable(bool val) {
 	this->availability = val;
 }
 
-bool Book::getAvailable() {
+bool Book::isAvailable() {
 	return this->availability;
 }
 
