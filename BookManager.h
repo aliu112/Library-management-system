@@ -13,6 +13,7 @@ public:
 	// Print functions
 	void print();
 	void printCategories();
+	void printHierarchy();
 
 	// Adders and removers
 	void add(Category* category);

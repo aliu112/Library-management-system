@@ -18,6 +18,14 @@ void BookManager::printCategories() {
 		this->categories[i]->print();
 }
 
+void BookManager::printHierarchy() {
+	this->print();
+	for (int i = 0; i < this->categories.size(); i++) {
+		this->categories[i]->print();
+		this->categories[i]->printBooks();
+	}
+}
+
 void BookManager::add(Category* category) {
 	this->categories.push_back(category);
 }
