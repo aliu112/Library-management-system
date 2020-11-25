@@ -35,6 +35,10 @@ void BookManager::remove(string title) {
 		}
 }
 
+int BookManager::categoryCount() {
+	return this->categories.size();
+}
+
 void BookManager::editCategory(string current, string change) {
 	for (int i = 0; i < this->categories.size(); i++)
 		if (current == this->categories[i]->getTitle())
@@ -69,21 +73,29 @@ void BookManager::changeBookCategory(string book, string currentCategory, string
 }
 
 Book* BookManager::findBook(string title) {
+	Book* temp = new Book();
 	for (int i = 0; i < this->categories.size(); i++)
 	{
-		Book* temp = this->categories[i]->findBook(title);
+		delete temp;
+		temp = this->categories[i]->findBook(title);
 		if (temp->getTitle() != "None")
 			return temp;
 	}
+	// Returns "None" if nothing is found
+	return temp;
 }
 
 Book* BookManager::findBook(uint64_t isbn13) {
+	Book* temp = new Book();
 	for (int i = 0; i < this->categories.size(); i++)
 	{
-		Book* temp = this->categories[i]->findBook(isbn13);
+		delete temp;
+		temp = this->categories[i]->findBook(isbn13);
 		if (temp->getTitle() != "None")
 			return temp;
 	}
+	// Returns "None" if nothing is found
+	return temp;
 }
 
 void BookManager::exportData() {

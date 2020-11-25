@@ -20,6 +20,7 @@ public:
 	void remove(string title);
 
 	// Category-related functions
+	int categoryCount();
 	void editCategory(string current, string change);
 	void changeBookCategory(string book, string currentCategory, string changeCategory);
 	Book* findBook(string book);
