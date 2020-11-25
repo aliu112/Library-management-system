@@ -28,7 +28,7 @@ Book* Category::findBook(string title) {
 	return noneFound;
 }
 
-Book* Category::findBook(__int64 isbn13) {
+Book* Category::findBook(uint64_t isbn13) {
 	for (Book* book : this->list)
 		if (isbn13 == book->getISBN13())
 			return book;
@@ -60,7 +60,7 @@ void Category::remove(string title) {
 		}
 }
 
-void Category::remove(__int64 isbn13) {
+void Category::remove(uint64_t isbn13) {
 	for (int i = 0; i < this->list.size(); i++)
 		if (isbn13 == this->list.at(i)->getISBN13())
 		{

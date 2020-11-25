@@ -9,7 +9,7 @@ Book::Book() : Media() {
 	this->setAvailable(false);
 }
 
-Book::Book(string title, string author, string datePublished, int numPages, __int64 isbn13) : Media(title) {
+Book::Book(string title, string author, string datePublished, int numPages, uint64_t isbn13) : Media(title) {
 	this->setAuthor(author);
 	this->setDate(datePublished);
 	this->setPages(numPages);
@@ -56,11 +56,11 @@ int Book::getPages() {
 	return this->numPages;
 }
 
-void Book::setISBN13(__int64 isbn13) {
+void Book::setISBN13(uint64_t isbn13) {
 	this->isbn13 = isbn13;
 }
 
-__int64 Book::getISBN13() {
+uint64_t Book::getISBN13() {
 	return this->isbn13;
 }
 
