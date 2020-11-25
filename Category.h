@@ -23,9 +23,9 @@ public:
 	int bookCount();
 
 	Book* findBook(string title);
-	Book* findBook(int isbn13);
+	Book* findBook(__int64 isbn13);
 	void add(Book*);
 	void remove(Book*);
 	void remove(string title);
-	void remove(long int isbn13);
+	void remove(__int64 isbn13);
 };
