@@ -28,5 +28,5 @@ public:
 	void remove(Book*);
 	void remove(string title);
 	void remove(uint64_t isbn13);
-	void remove(int index);
+	void removeAt(int index);
 };

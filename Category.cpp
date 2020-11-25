@@ -67,7 +67,7 @@ void Category::remove(string title) {
 		}
 }
 
-void Category::remove(int index) {
+void Category::removeAt(int index) {
 	delete this->list[index];
 	this->list.erase(this->list.begin() + index);
 }
