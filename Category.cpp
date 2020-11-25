@@ -5,8 +5,13 @@ Category::Category() : Media() {}
 
 Category::Category(string title) : Media(title) {}
 
+Category::~Category() {
+	for (int i = 0; i < this->list.size(); i++)
+		delete this->list[i];
+}
+
 void Category::print() {
-	std::cout << "Category: " << std::endl;
+	std::cout << "Category: " << this->getTitle() << std::endl;
 }
 
 void Category::printBooks() {
@@ -46,6 +51,7 @@ void Category::remove(Book* book) {
 	for (int i = 0; i < this->list.size(); i++)
 		if (this->list.at(i)->compare(book))
 		{
+			delete this->list[i];
 			this->list.erase(this->list.begin() + i);
 			break;
 		}
@@ -55,9 +61,15 @@ void Category::remove(string title) {
 	for (int i = 0; i < this->list.size(); i++)
 		if (title == this->list.at(i)->getTitle())
 		{
+			delete this->list[i];
 			this->list.erase(this->list.begin() + i);
 			break;
 		}
+}
+
+void Category::remove(int index) {
+	delete this->list[index];
+	this->list.erase(this->list.begin() + index);
 }
 
 void Category::remove(uint64_t isbn13) {

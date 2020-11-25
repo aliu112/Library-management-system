@@ -1,5 +1,4 @@
 #pragma once
-#include "Media.h"
 #include "Book.h"
 #include <vector>
 
@@ -13,6 +12,7 @@ public:
 	// Constructors
 	Category();
 	Category(string title);
+	~Category();
 
 	// Populate virtual function
 	void print();
@@ -28,4 +28,5 @@ public:
 	void remove(Book*);
 	void remove(string title);
 	void remove(uint64_t isbn13);
+	void remove(int index);
 };
