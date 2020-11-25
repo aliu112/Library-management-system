@@ -8,7 +8,7 @@ Book::Book() : Media() {
 	this->setAvailable(false);
 }
 
-Book::Book(string title, string author, string datePublished, int numPages, int isbn13) : Media(title) {
+Book::Book(string title, string author, string datePublished, int numPages, long int isbn13) : Media(title) {
 	this->setAuthor(author);
 	this->setDate(datePublished);
 	this->setISBN13(numPages);
@@ -54,11 +54,11 @@ int Book::getPages() {
 	return this->numPages;
 }
 
-void Book::setISBN13(int isbn13) {
+void Book::setISBN13(long int isbn13) {
 	this->isbn13 = isbn13;
 }
 
-int Book::getISBN13() {
+long int Book::getISBN13() {
 	return this->isbn13;
 }
 

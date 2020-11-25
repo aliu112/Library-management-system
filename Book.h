@@ -6,14 +6,14 @@ private:
 	string author;
 	string datePublished;
 	int numPages;
-	int isbn13;
+	long int isbn13;
 	bool availability;
 
 public:
 	// Constructors
 	Book();
 	Book(string title);
-	Book(string title, string author, string datePublished, int numPages, int isbn13);
+	Book(string title, string author, string datePublished, int numPages, long int isbn13);
 
 	// Populate virtual function
 	void print();
@@ -28,8 +28,8 @@ public:
 	void setPages(int pages);
 	int getPages();
 
-	void setISBN13(int isbn13);
-	int getISBN13();
+	void setISBN13(long int isbn13);
+	long int getISBN13();
 
 	void setAvailable(bool val);
 	bool getAvailable();
