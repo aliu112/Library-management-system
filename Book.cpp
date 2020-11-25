@@ -17,6 +17,9 @@ Book::Book(string title, string author, string datePublished, int numPages, uint
 	this->setAvailable(false);
 }
 
+Book::Book(Book* book) : Book(book->getTitle(), book->getAuthor(), book->getDate(), book->getPages(), book->isbn13) {
+}
+
 Book::Book(string title) : Media(title) {
 	this->setAuthor("None");
 	this->setDate("00-00-0000");
