@@ -44,7 +44,7 @@ void Category::add(Book* book) {
 
 void Category::remove(Book* book) {
 	for (int i = 0; i < this->list.size(); i++)
-		if (book == this->list.at(i))
+		if (this->list.at(i)->compare(book))
 		{
 			this->list.erase(this->list.begin() + i);
 			break;
@@ -60,7 +60,7 @@ void Category::remove(string title) {
 		}
 }
 
-void Category::remove(int isbn13) {
+void Category::remove(long int isbn13) {
 	for (int i = 0; i < this->list.size(); i++)
 		if (isbn13 == this->list.at(i)->getISBN13())
 		{

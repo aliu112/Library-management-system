@@ -27,5 +27,5 @@ public:
 	void add(Book*);
 	void remove(Book*);
 	void remove(string title);
-	void remove(int isbn13);
+	void remove(long int isbn13);
 };
