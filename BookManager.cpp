@@ -52,7 +52,7 @@ void BookManager::changeBookCategory(string book, string currentCategory, string
 		{
 			// Get the book
 			Book* temp = this->categories[i]->findBook(book);
-			if (temp->getTitle() != "None")
+			if (temp->getTitle() != "BookNotFound")
 			{
 				// Remove the book from the old list
 				Book* found = new Book(temp);
@@ -78,7 +78,7 @@ Book* BookManager::findBook(string title) {
 	{
 		delete temp;
 		temp = this->categories[i]->findBook(title);
-		if (temp->getTitle() != "None")
+		if (temp->getTitle() != "BookNotFound")
 			return temp;
 	}
 	// Returns "None" if nothing is found
@@ -91,7 +91,7 @@ Book* BookManager::findBook(uint64_t isbn13) {
 	{
 		delete temp;
 		temp = this->categories[i]->findBook(isbn13);
-		if (temp->getTitle() != "None")
+		if (temp->getTitle() != "BookNotFound")
 			return temp;
 	}
 	// Returns "None" if nothing is found
