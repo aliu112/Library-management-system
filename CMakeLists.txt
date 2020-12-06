@@ -1,31 +1,27 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 ADD_SUBDIRECTORY(googletest)
-find_package(GTest REQUIRED)
-
 
 SET(CMAKE_CXX_STANDARD 11)
 
-ADD_EXECUTABLE(main
-    main.cpp
-    LibraryFacade.cpp
-    User.cpp
-    owedDebts.cpp
+ADD_EXECUTABLE(main2
+    main2.cpp
+    Media.cpp
+    Book.cpp
+    Category.cpp
 )
 
-ADD_EXECUTABLE(test
+ADD_EXECUTABLE(test2
     unit_test.cpp
-    User.cpp
-    owedDebts.cpp
+    Media.cpp
+    Book.cpp
+    Category.cpp
+    BookManager.cpp
 )
-
-
 
 TARGET_LINK_LIBRARIES(
-    test
-    gmock
+    test2
     gtest 
-    gtest_main
 )
 
-TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+TARGET_COMPILE_DEFINITIONS(test2 PRIVATE gtest_disable_pthreads=ON)

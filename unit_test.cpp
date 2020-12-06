@@ -1,6 +1,8 @@
 #include "gtest/gtest.h"
-#include "User_test.h"
-#include "owedDebts_test.h"
+#include "Media_test.h"
+#include "Book_test.h"
+#include "Category_test.h"
+#include "BookManager_test.h"
 
 
 int main(int argc, char **argv) {
