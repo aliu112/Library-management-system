@@ -19,7 +19,7 @@ class User{
         User();
         bool isValidLogin(string, string);
         void addAccount(string, string);
-        void removeAccount(string, string);
+        bool removeAccount(string, string);
         bool getIsLoggedIn();
         bool getIsAdmin();
         int GetNumInList();

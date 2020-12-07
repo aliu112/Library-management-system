@@ -93,7 +93,7 @@ void User::addAccount(string username, string password){
     }
 }
 
-void User::removeAccount(string username, string password){
+bool User::removeAccount(string username, string password){
     int flag=0;
     string tempUser;
     string tempPass;
@@ -114,7 +114,7 @@ void User::removeAccount(string username, string password){
         if(tempUser == username && tempPass == password)
         {
             flag =1;
-            cout << "Account found and removed\n";
+            
         }
         if(tempUser != username && tempPass != password)
         {
@@ -124,6 +124,10 @@ void User::removeAccount(string username, string password){
     
     }
 
+    if(flag ==1)
+    {
+        cout << "Account found and removed\n";
+    }
     if(flag == 0)
     {
         cout << "Account not found\n";
@@ -146,6 +150,15 @@ void User::removeAccount(string username, string password){
 
     rename(userOldName,userNewName);
     rename(passOldName,passNewName );
+    
+    if(flag == 0)
+    {
+        return 0;
+    }
+    else 
+    {
+        return 1;
+    }
 
 
 }

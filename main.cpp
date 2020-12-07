@@ -2,12 +2,42 @@
 #include "LibraryFacade.h"
 #include "User.h"
 #include "owedDebts.h"
+#include "Media.h"
+#include "Book.h"
+#include "Category.h"
+#include "BookManager.h"
+
 #include <string>
 
 using namespace std;
 int main()
 {
-    LibraryFacade test;
+    LibraryFacade test = LibraryFacade();
+
+    // Create sample books and put them in categories
+	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "04-16-1989", 270, 4451952310892);
+	Book* book2 = new Book("How to Program in C++", "John Doe", "04-16-1989", 270, 1732630091782);
+	Book* book3 = new Book("Satistics for Dummies", "John Doe", "04-16-1989", 270, 7388419576579);
+
+	Category* category1 = new Category("Cool");
+	category1->add(book1);
+
+	Category* category2 = new Category("Rad");
+	category2->add(book2);
+
+	Category* category3 = new Category("Boring");
+	category3->add(book3);
+
+	// Add another layer to the composition
+	//BookManager mange = BookManager();
+	test.addCategory(category1);
+	test.addCategory(category2);
+	test.addCategory(category3);
+    //mange.printHierarchy();
+    
+
+
+
     int userInput=0;
     bool loggedIn= false;
     cout << "Welcome to the Library Management Sysytem\n";
@@ -97,7 +127,9 @@ int main()
         cout << "1. Borrow a book\n";
         cout << "2. Display a book's information\n";
         cout << "3. payDebt\n";
-        cout << "4. Delete account\n";
+        cout << "4. Display all avaliable books\n";
+        cout << "5. Delete account\n";
+        
         cin >> userInput2;
         // TODO Implement interface that prompts user to choose from adding
         //books, displaying books, borrowing books, etc...
@@ -119,6 +151,10 @@ int main()
         }
         else if(userInput2 =="4")
         {
+            test.displayBooks();
+        }
+        else if(userInput2 =="5")
+        {
             cout << "Reenter credentials to confirm deletion\n";
             cout << "Enter username: ";
             string user;
@@ -126,7 +162,12 @@ int main()
             cin >> user;
             cout << "Enter password: ";
             cin >> pass;
-            test.removeAccount(user,pass);
+            bool tempHolder = test.removeAccount(user,pass);
+            if(tempHolder == 1)
+            {
+                break;
+            }
+            
         }
         else
         {
