@@ -18,7 +18,7 @@ public:
 	// Adders and removers
 	void add(Category* category);
 	void remove(Category* category);
-	void remove(string title);
+	bool remove(string title);
 
 	// Category-related functions
 	int categoryCount();

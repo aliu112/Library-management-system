@@ -17,15 +17,15 @@ class LibraryFacade{
     public:
         LibraryFacade();
         void borrowBook(string);
-        void displayBookInfo();
-        void addBook();
+        void addBook(string);
         bool login(string,string);
         void createAccount(string,string);
         bool removeAccount(string,string);
         void displayBooks();
         void showCategories();
         void addCategory(Category*);
-        void removeBook();
+        bool removeCategory(string);
+        void removeBook(string);
         void searchBook(string);
         int payDebt();
 

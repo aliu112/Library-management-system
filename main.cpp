@@ -151,12 +151,11 @@ int main()
         cout << "3. Show debt\n";
         cout << "4. Display all books w/ info\n";
         cout << "5. Display all book categories\n";
-        cout << "6. Find a book\n";
-        cout << "8. Add book\n";
-        cout << "9. Remove book\n";
-        cout << "10. Add Category\n";
-        cout << "11. Remove Category\n";
-        cout << "12. Delete account\n";
+        cout << "6. Add book\n";
+        cout << "7. Remove book\n";
+        cout << "8. Add Category\n";
+        cout << "9. Remove Category\n";
+        cout << "10. Delete account\n";
         
         cin >> userInput2;
         // TODO Implement interface that prompts user to choose from adding
@@ -175,7 +174,11 @@ int main()
         }
         else if(userInput2 =="2")
         {
-            
+            string bookName="";
+            cout << "Enter the book's name (Caps sensitive): ";
+            cin.ignore();
+            getline(cin,bookName);
+            test.searchBook(bookName);   
         }
         else if(userInput2 =="3")
         {
@@ -192,13 +195,37 @@ int main()
         }
         else if(userInput2 =="6")
         {
-            string bookName="";
-            cout << "Enter the book's name (Caps sensitive): ";
-            cin.ignore();
-            getline(cin,bookName);
-            test.searchBook(bookName);
+           
         }
         else if(userInput2 =="7")
+        {
+           
+        }
+        else if(userInput2 =="8")
+        {
+           string categoryName="";
+           cout << "Please enter a Category name: ";
+           cin >> categoryName;
+           Category* tempCategory = new Category(categoryName);
+           test.addCategory(tempCategory);
+        }
+        else if(userInput2 =="9")
+        {
+            string categoryName="";
+           cout << "Please enter a Category name for removal: ";
+           cin >> categoryName;
+           bool wasRemoved = test.removeCategory(categoryName);
+           if (wasRemoved)
+           {
+               cout << "Successfully removed\n";
+           }
+           else 
+           {
+               cout << "Could not find category\n";
+           }
+           
+        }
+        else if(userInput2 =="10")
         {
             cout << "Reenter credentials to confirm deletion\n";
             cout << "Enter username: ";

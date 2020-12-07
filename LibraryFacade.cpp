@@ -20,12 +20,7 @@ void LibraryFacade::borrowBook(string temp){
     
     
 }
-void LibraryFacade::displayBookInfo(){
 
-}
-void LibraryFacade::addBook(){
-//TODO
-}
 bool LibraryFacade::login(string username, string password){
     bool temp = user.isValidLogin(username,password);
     /*
@@ -51,7 +46,15 @@ void LibraryFacade::addCategory(Category* newCategory)
 {
     manager.add(newCategory);
 }
-void LibraryFacade::removeBook(){
+bool LibraryFacade::removeCategory(string name){
+    bool temp = manager.remove(name);
+    return temp;
+}
+
+void LibraryFacade::addBook(string x){
+//TODO
+}
+void LibraryFacade::removeBook(string x){
 //TODO
 }
 
