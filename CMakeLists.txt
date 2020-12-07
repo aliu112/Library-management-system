@@ -9,6 +9,7 @@ ADD_EXECUTABLE(main2
     Media.cpp
     Book.cpp
     Category.cpp
+    BookManager.cpp
 )
 
 ADD_EXECUTABLE(test2
@@ -17,7 +18,19 @@ ADD_EXECUTABLE(test2
     Book.cpp
     Category.cpp
     BookManager.cpp
+    User.cpp
+    owedDebts.cpp
 )
+
+ADD_EXECUTABLE(main
+    main.cpp
+    LibraryFacade.cpp
+    User.cpp
+    owedDebts.cpp
+)
+
+
+
 
 TARGET_LINK_LIBRARIES(
     test2
