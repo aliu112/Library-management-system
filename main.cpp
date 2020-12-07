@@ -152,7 +152,11 @@ int main()
         cout << "4. Display all books w/ info\n";
         cout << "5. Display all book categories\n";
         cout << "6. Find a book\n";
-        cout << "7. Delete account\n";
+        cout << "8. Add book\n";
+        cout << "9. Remove book\n";
+        cout << "10. Add Category\n";
+        cout << "11. Remove Category\n";
+        cout << "12. Delete account\n";
         
         cin >> userInput2;
         // TODO Implement interface that prompts user to choose from adding
@@ -163,7 +167,10 @@ int main()
         }
         else if(userInput2 =="1")
         {
-
+            string bookName ="";
+            cout << "Enter the book's name (Caps sensitive): ";
+            getline(cin,bookName);
+            test.borrowBook(bookName);
         }
         else if(userInput2 =="2")
         {
@@ -186,7 +193,7 @@ int main()
         {
             string bookName="";
             cout << "Enter the book's name (Caps sensitive): ";
-            cin >> bookName;
+            getline(cin,bookName);
             test.searchBook(bookName);
         }
         else if(userInput2 =="7")

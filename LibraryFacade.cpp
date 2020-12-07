@@ -5,8 +5,20 @@ using namespace std;
 LibraryFacade::LibraryFacade(){
 }
 
-void LibraryFacade::borrowBook(){
-//TODO
+void LibraryFacade::borrowBook(string temp){
+    Book* searchedBook = manager.findBook(temp);
+    bool isAvaliable = searchedBook->isAvailable();
+    if(isAvaliable)
+    {
+        searchedBook->setAvailable(false);
+        cout << "Successfully checkouted\n";
+    }
+    else
+    {
+        cout << "Book is not availiable\n";
+    }
+    
+    
 }
 void LibraryFacade::displayBookInfo(){
 
