@@ -15,24 +15,46 @@ int main()
     LibraryFacade test = LibraryFacade();
 
     // Create sample books and put them in categories
-	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "04-16-1989", 270, 4451952310892);
-	Book* book2 = new Book("How to Program in C++", "John Doe", "04-16-1989", 270, 1732630091782);
-	Book* book3 = new Book("Satistics for Dummies", "John Doe", "04-16-1989", 270, 7388419576579);
+	Book* book1 = new Book("To Kill a Mockingbird", "Harper Lee", "07-11-1960", 281, 9780446310789);
+	Book* book2 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "04-10-1925", 218, 9780743273565);
+	Book* book3 = new Book("The Catcher in the Rye", "J.D. Salinger", "07-16-1951", 234, 9780316769488);
+	Book* book4 = new Book("The Immortal Life of Henrietta Lacks", "Rebecca Skloot", "02-02-2010", 381, 9781400052172);
+	Book* book5 = new Book("Educated", "Tara Westover", "02-20-2018", 352, 9780399590504);
+	Book* book6 = new Book("How to Win Friends and Influence People", "Dale Carnegie", "00-10-1936", 270, 9780671027032);
+	Book* book7 = new Book("A Promised Land", "Barack Obama", "11-17-2020", 768, 9781524763169);
+	Book* book8 = new Book("Becoming", "Michelle Obama", "11-13-2018", 448, 9781524763138);
+	Book* book9 = new Book("Greenlights", "Matthew McConaughey", "10-20-2020", 304, 9780593139134);
+	Book* book10 = new Book("HumanKind", "Yuval Noah Harari", "00-00-2011", 443, 9780062316097);
+	Book* book11 = new Book("A People's History of the Unites States", "Howard Zim", "00-00-1980", 729, 9780060838652);
+	Book* book12 = new Book("Guns, Germs, and Steel", "Jared Diamond", "00-03-1997", 480, 9780393317558);
 
-	Category* category1 = new Category("Cool");
+
+	Category* category1 = new Category("Fiction");
 	category1->add(book1);
+    category1->add(book2);
+    category1->add(book3);
 
-	Category* category2 = new Category("Rad");
-	category2->add(book2);
+	Category* category2 = new Category("Non-fiction");
+	category2->add(book4);
+    category2->add(book5);
+    category2->add(book6);
 
-	Category* category3 = new Category("Boring");
-	category3->add(book3);
+	Category* category3 = new Category("Biographies");
+	category3->add(book7);
+    category3->add(book8);
+    category3->add(book9);
+
+    Category* category4 = new Category("History");
+	category4->add(book10);
+    category4->add(book11);
+    category4->add(book12);
 
 	// Add another layer to the composition
 	//BookManager mange = BookManager();
 	test.addCategory(category1);
 	test.addCategory(category2);
 	test.addCategory(category3);
+    test.addCategory(category4); 
     //mange.printHierarchy();
     
 
@@ -128,7 +150,8 @@ int main()
         cout << "2. Display a book's information\n";
         cout << "3. payDebt\n";
         cout << "4. Display all avaliable books\n";
-        cout << "5. Delete account\n";
+        cout << "5. Display all book categories\n";
+        cout << "6. Delete account\n";
         
         cin >> userInput2;
         // TODO Implement interface that prompts user to choose from adding
@@ -154,6 +177,10 @@ int main()
             test.displayBooks();
         }
         else if(userInput2 =="5")
+        {
+            test.showCategories();
+        }
+        else if(userInput2 =="6")
         {
             cout << "Reenter credentials to confirm deletion\n";
             cout << "Enter username: ";

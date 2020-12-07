@@ -42,6 +42,11 @@ void LibraryFacade::addCategory(Category* newCategory)
 void LibraryFacade::removeBook(){
 //TODO
 }
+
+void LibraryFacade::showCategories()
+{
+    manager.printCategories();
+}
 void LibraryFacade::reserveBook(){
 //TODO
 }

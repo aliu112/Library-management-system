@@ -22,6 +22,7 @@ class LibraryFacade{
         void createAccount(string,string);
         bool removeAccount(string,string);
         void displayBooks();
+        void showCategories();
         void addCategory(Category*);
         void removeBook();
         void reserveBook();
