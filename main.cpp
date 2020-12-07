@@ -148,7 +148,7 @@ int main()
         cout << "0. Quit\n";
         cout << "1. Borrow a book\n";
         cout << "2. Display a book's information\n";
-        cout << "3. payDebt\n";
+        cout << "3. Show debt\n";
         cout << "4. Display all avaliable books\n";
         cout << "5. Display all book categories\n";
         cout << "6. Delete account\n";
@@ -170,7 +170,8 @@ int main()
         }
         else if(userInput2 =="3")
         {
-            
+           int amount = test.payDebt();
+           cout << "You owe $" << amount << endl;
         }
         else if(userInput2 =="4")
         {

@@ -26,7 +26,7 @@ class LibraryFacade{
         void addCategory(Category*);
         void removeBook();
         void reserveBook();
-        void payDebt();
+        int payDebt();
 
 };
 

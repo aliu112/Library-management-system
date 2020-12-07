@@ -50,6 +50,8 @@ void LibraryFacade::showCategories()
 void LibraryFacade::reserveBook(){
 //TODO
 }
-void LibraryFacade::payDebt(){
+int LibraryFacade::payDebt()
+{
+    return payment.GetAmountOwed();
     
 }
