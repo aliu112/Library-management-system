@@ -169,6 +169,7 @@ int main()
         {
             string bookName ="";
             cout << "Enter the book's name (Caps sensitive): ";
+            cin.ignore();
             getline(cin,bookName);
             test.borrowBook(bookName);
         }
@@ -193,6 +194,7 @@ int main()
         {
             string bookName="";
             cout << "Enter the book's name (Caps sensitive): ";
+            cin.ignore();
             getline(cin,bookName);
             test.searchBook(bookName);
         }
