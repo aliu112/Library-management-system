@@ -17,7 +17,7 @@ class LibraryFacade{
     public:
         LibraryFacade();
         void borrowBook(string);
-        void addBook(string);
+        void addBook(Book*,int );
         bool login(string,string);
         void createAccount(string,string);
         bool removeAccount(string,string);
@@ -28,7 +28,7 @@ class LibraryFacade{
         void removeBook(string);
         void searchBook(string);
         int payDebt();
-
+        int findCategory(string);
 };
 
 #endif //

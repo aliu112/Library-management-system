@@ -12,6 +12,7 @@
 using namespace std;
 int main()
 {
+    //hard code books into the system
     LibraryFacade test = LibraryFacade();
 
     // Create sample books and put them in categories
@@ -143,6 +144,7 @@ int main()
 
     cout << "Welcome back\n";
     string userInput2;
+    //User Interface, User will use this code to interact w/ the library system
     while(loggedIn){
         cout << "Please select the following options\n";
         cout << "0. Quit\n";
@@ -158,12 +160,15 @@ int main()
         cout << "10. Delete account\n";
         
         cin >> userInput2;
-        // TODO Implement interface that prompts user to choose from adding
-        //books, displaying books, borrowing books, etc...
+
+        //exits loop
         if(userInput2 == "0")
         {
             loggedIn= false;
         }
+        //User inputs a title that they wish to checkout
+        //If the book is availiable then it'll be checked out
+        //if not system will let them know it's not available
         else if(userInput2 =="1")
         {
             string bookName ="";
@@ -172,6 +177,8 @@ int main()
             getline(cin,bookName);
             test.borrowBook(bookName);
         }
+        //Displays a book's information
+        //Initiated by userInput
         else if(userInput2 =="2")
         {
             string bookName="";
@@ -180,27 +187,69 @@ int main()
             getline(cin,bookName);
             test.searchBook(bookName);   
         }
+        //Checks user's account and displays if they owe any money
         else if(userInput2 =="3")
         {
            int amount = test.payDebt();
            cout << "You owe $" << amount << endl;
         }
+        //displays all books in the system
         else if(userInput2 =="4")
         {
             test.displayBooks();
         }
+        //displays all categories of books the library has
         else if(userInput2 =="5")
         {
             test.showCategories();
         }
+        //adds book
         else if(userInput2 =="6")
         {
-           
-        }
+           int isFound = -1;
+            while(isFound == -1)
+            {
+                string CategoryName="";
+                cout << "Enter the name of the category you wish to put the book under: ";
+                cin >> CategoryName;
+                isFound = test.findCategory(CategoryName);
+                if(isFound != -1)
+                {
+                    cout << "Category found\n";
+                }
+                else
+                {
+                    cout << "Category not found\nPlease";
+                }
+            }
+            string title;
+            string author;
+            string publishDate;
+            int numPages= 0;
+            uint64_t numIsbn13;
+
+            cout << "Enter title: ";
+            cin.ignore();
+            getline(cin,title);
+            cout << "Enter author name: ";
+            cin.ignore();
+            getline(cin,author);
+            cout << "Enter publish date (dd-mm-year): ";
+            cin >> publishDate;
+            cout << "Enter the number of pages: ";
+            cin >> numPages;
+            cout << "Enter the 13 number long isbn13: ";
+            cin >> numIsbn13;
+            Book* tempBook = new Book(title,author,publishDate,numPages,numIsbn13);
+
+            test.addBook(tempBook, isFound);
+         }
+            //removes book
         else if(userInput2 =="7")
         {
            
         }
+        //adds category
         else if(userInput2 =="8")
         {
            string categoryName="";
@@ -209,6 +258,7 @@ int main()
            Category* tempCategory = new Category(categoryName);
            test.addCategory(tempCategory);
         }
+        //removes category only if found
         else if(userInput2 =="9")
         {
             string categoryName="";
@@ -225,6 +275,7 @@ int main()
            }
            
         }
+        //removes an account from the system and logs them out 
         else if(userInput2 =="10")
         {
             cout << "Reenter credentials to confirm deletion\n";

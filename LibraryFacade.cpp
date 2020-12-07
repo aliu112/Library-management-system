@@ -51,8 +51,8 @@ bool LibraryFacade::removeCategory(string name){
     return temp;
 }
 
-void LibraryFacade::addBook(string x){
-//TODO
+void LibraryFacade::addBook(Book* temp,int numCategory){
+    manager.addBook(temp, numCategory);
 }
 void LibraryFacade::removeBook(string x){
 //TODO
@@ -70,4 +70,8 @@ int LibraryFacade::payDebt()
 {
     return payment.GetAmountOwed();
     
+}
+int LibraryFacade::findCategory(string name){
+    int x = manager.findCategory(name);
+    return x;
 }
