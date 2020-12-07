@@ -149,9 +149,10 @@ int main()
         cout << "1. Borrow a book\n";
         cout << "2. Display a book's information\n";
         cout << "3. Show debt\n";
-        cout << "4. Display all avaliable books\n";
+        cout << "4. Display all books w/ info\n";
         cout << "5. Display all book categories\n";
-        cout << "6. Delete account\n";
+        cout << "6. Find a book\n";
+        cout << "7. Delete account\n";
         
         cin >> userInput2;
         // TODO Implement interface that prompts user to choose from adding
@@ -182,6 +183,13 @@ int main()
             test.showCategories();
         }
         else if(userInput2 =="6")
+        {
+            string bookName="";
+            cout << "Enter the book's name (Caps sensitive): ";
+            cin >> bookName;
+            test.searchBook(bookName);
+        }
+        else if(userInput2 =="7")
         {
             cout << "Reenter credentials to confirm deletion\n";
             cout << "Enter username: ";

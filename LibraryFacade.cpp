@@ -47,8 +47,9 @@ void LibraryFacade::showCategories()
 {
     manager.printCategories();
 }
-void LibraryFacade::reserveBook(){
-//TODO
+void LibraryFacade::searchBook(string temp){
+    Book* searchedBook = manager.findBook(temp);
+    searchedBook->print();
 }
 int LibraryFacade::payDebt()
 {
