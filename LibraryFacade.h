@@ -1,6 +1,7 @@
 #ifndef __library_facade_h__
 #define __library_facade_h__
 #include "OwedDebts.h"
+#include "BookManager.h"
 #include "User.h"
 #include <string>
 
@@ -9,7 +10,8 @@ using namespace std;
 class LibraryFacade{
     protected:
         User user;
-        OwedDebts payment;      
+        OwedDebts payment;
+        BookManager manager;      
         
     public:
         LibraryFacade();
@@ -18,7 +20,9 @@ class LibraryFacade{
         void addBook();
         bool login(string,string);
         void createAccount(string,string);
-        void removeAccount(string,string);
+        bool removeAccount(string,string);
+        void displayBooks();
+        void addCategory(Category*);
         void removeBook();
         void reserveBook();
         void payDebt();

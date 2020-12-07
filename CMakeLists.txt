@@ -25,6 +25,10 @@ ADD_EXECUTABLE(test2
 ADD_EXECUTABLE(main
     main.cpp
     LibraryFacade.cpp
+    Media.cpp
+    Book.cpp
+    Category.cpp
+    BookManager.cpp
     User.cpp
     owedDebts.cpp
 )
