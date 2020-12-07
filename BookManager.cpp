@@ -44,6 +44,23 @@ bool BookManager::remove(string title) {
 		return 0;
 }
 
+int BookManager::findCategory(string name)
+{
+	int temp = categories.size();
+    for(int i=0; i < temp; ++i)
+    {
+        if(name == categories.at(i)->getTitle())
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+void BookManager::addBook(Book* temp, int numCategory)
+{
+	categories.at(numCategory)->add(temp);
+}
+
 int BookManager::categoryCount() {
 	return this->categories.size();
 }
