@@ -23,6 +23,7 @@ public:
 	// Category-related functions
 	int findCategory(string);
 	void addBook(Book*, int);
+	void removeBook(string, int);
 	int categoryCount();
 	void editCategory(string current, string change);
 	void changeBookCategory(string book, string currentCategory, string changeCategory);

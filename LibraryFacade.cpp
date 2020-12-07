@@ -54,8 +54,8 @@ bool LibraryFacade::removeCategory(string name){
 void LibraryFacade::addBook(Book* temp,int numCategory){
     manager.addBook(temp, numCategory);
 }
-void LibraryFacade::removeBook(string x){
-//TODO
+void LibraryFacade::removeBook(string title, int numCategory){
+    manager.removeBook(title,numCategory);
 }
 
 void LibraryFacade::showCategories()

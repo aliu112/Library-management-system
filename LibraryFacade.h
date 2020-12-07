@@ -25,7 +25,7 @@ class LibraryFacade{
         void showCategories();
         void addCategory(Category*);
         bool removeCategory(string);
-        void removeBook(string);
+        void removeBook(string,int);
         void searchBook(string);
         int payDebt();
         int findCategory(string);

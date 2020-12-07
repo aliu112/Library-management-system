@@ -243,11 +243,31 @@ int main()
             Book* tempBook = new Book(title,author,publishDate,numPages,numIsbn13);
 
             test.addBook(tempBook, isFound);
+            cout << "Book successfully added\n";
          }
-            //removes book
+        //removes book
         else if(userInput2 =="7")
         {
-           
+           int isFound = -1;
+            while(isFound == -1)
+            {
+                string CategoryName="";
+                cout << "Enter the name of the category the book is under: ";
+                cin >> CategoryName;
+                isFound = test.findCategory(CategoryName);
+                if(isFound != -1)
+                {
+                    cout << "Category found\n";
+                }
+                else
+                {
+                    cout << "Category not found\nPlease";
+                }
+            }
+            string title;
+            cout << "Enter book title: ";
+            cin >> title;
+            test.removeBook(title,isFound);
         }
         //adds category
         else if(userInput2 =="8")

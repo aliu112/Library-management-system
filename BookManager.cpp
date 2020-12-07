@@ -60,7 +60,10 @@ void BookManager::addBook(Book* temp, int numCategory)
 {
 	categories.at(numCategory)->add(temp);
 }
-
+void BookManager::removeBook(string temp , int numCategory)
+{
+	categories.at(numCategory)->remove(temp);
+}
 int BookManager::categoryCount() {
 	return this->categories.size();
 }
