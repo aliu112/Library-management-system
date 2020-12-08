@@ -320,7 +320,7 @@ int main()
 
         
     }
-    cout << "Successfully exited\n";
+    cout << "Successfully exited\nThank you for using Library Management System\n";
 
     
 
