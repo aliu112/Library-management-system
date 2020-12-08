@@ -18,9 +18,12 @@ public:
 	// Adders and removers
 	void add(Category* category);
 	void remove(Category* category);
-	void remove(string title);
+	bool remove(string title);
 
 	// Category-related functions
+	int findCategory(string);
+	void addBook(Book*, int);
+	void removeBook(string, int);
 	int categoryCount();
 	void editCategory(string current, string change);
 	void changeBookCategory(string book, string currentCategory, string changeCategory);

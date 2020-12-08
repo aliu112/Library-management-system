@@ -2,6 +2,7 @@
 #define __library_facade_h__
 #include "OwedDebts.h"
 #include "BookManager.h"
+#include "Book.h"
 #include "User.h"
 #include <string>
 
@@ -15,18 +16,19 @@ class LibraryFacade{
         
     public:
         LibraryFacade();
-        void borrowBook();
-        void displayBookInfo();
-        void addBook();
+        void borrowBook(string);
+        void addBook(Book*,int );
         bool login(string,string);
         void createAccount(string,string);
         bool removeAccount(string,string);
         void displayBooks();
+        void showCategories();
         void addCategory(Category*);
-        void removeBook();
-        void reserveBook();
-        void payDebt();
-
+        bool removeCategory(string);
+        void removeBook(string,int);
+        void searchBook(string);
+        int payDebt();
+        int findCategory(string);
 };
 
 #endif //

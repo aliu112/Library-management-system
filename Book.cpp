@@ -14,7 +14,7 @@ Book::Book(string title, string author, string datePublished, int numPages, uint
 	this->setDate(datePublished);
 	this->setPages(numPages);
 	this->setISBN13(isbn13);
-	this->setAvailable(false);
+	this->setAvailable(true);
 }
 
 Book::Book(Book* book) : Book(book->getTitle(), book->getAuthor(), book->getDate(), book->getPages(), book->isbn13) {

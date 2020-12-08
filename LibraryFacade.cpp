@@ -5,15 +5,22 @@ using namespace std;
 LibraryFacade::LibraryFacade(){
 }
 
-void LibraryFacade::borrowBook(){
-//TODO
+void LibraryFacade::borrowBook(string temp){
+    Book* searchedBook = manager.findBook(temp);
+    bool isAvaliable = searchedBook->isAvailable();
+    if(isAvaliable)
+    {
+        searchedBook->setAvailable(false);
+        cout << "Successfully checkouted\n";
+    }
+    else
+    {
+        cout << "Book is not availiable\n";
+    }
+    
+    
 }
-void LibraryFacade::displayBookInfo(){
 
-}
-void LibraryFacade::addBook(){
-//TODO
-}
 bool LibraryFacade::login(string username, string password){
     bool temp = user.isValidLogin(username,password);
     /*
@@ -39,12 +46,32 @@ void LibraryFacade::addCategory(Category* newCategory)
 {
     manager.add(newCategory);
 }
-void LibraryFacade::removeBook(){
-//TODO
+bool LibraryFacade::removeCategory(string name){
+    bool temp = manager.remove(name);
+    return temp;
 }
-void LibraryFacade::reserveBook(){
-//TODO
+
+void LibraryFacade::addBook(Book* temp,int numCategory){
+    manager.addBook(temp, numCategory);
 }
-void LibraryFacade::payDebt(){
+void LibraryFacade::removeBook(string title, int numCategory){
+    manager.removeBook(title,numCategory);
+}
+
+void LibraryFacade::showCategories()
+{
+    manager.printCategories();
+}
+void LibraryFacade::searchBook(string temp){
+    Book* searchedBook = manager.findBook(temp);
+    searchedBook->print();
+}
+int LibraryFacade::payDebt()
+{
+    return payment.GetAmountOwed();
     
+}
+int LibraryFacade::findCategory(string name){
+    int x = manager.findCategory(name);
+    return x;
 }

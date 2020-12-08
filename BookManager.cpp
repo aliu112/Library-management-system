@@ -34,15 +34,36 @@ void BookManager::remove(Category* category) {
 	this->remove(category->getTitle());
 }
 
-void BookManager::remove(string title) {
+bool BookManager::remove(string title) {
 	for (int i = 0; i < this->categories.size(); i++)
 		if (title == this->categories[i]->getTitle())
 		{
 			this->categories.erase(this->categories.begin() + i);
-			break;
+			return 1;
 		}
+		return 0;
 }
 
+int BookManager::findCategory(string name)
+{
+	int temp = categories.size();
+    for(int i=0; i < temp; ++i)
+    {
+        if(name == categories.at(i)->getTitle())
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+void BookManager::addBook(Book* temp, int numCategory)
+{
+	categories.at(numCategory)->add(temp);
+}
+void BookManager::removeBook(string temp , int numCategory)
+{
+	categories.at(numCategory)->remove(temp);
+}
 int BookManager::categoryCount() {
 	return this->categories.size();
 }
