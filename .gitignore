@@ -13,3 +13,5 @@ cmake_install.cmake
 
 main
 test
+main2
+test2
