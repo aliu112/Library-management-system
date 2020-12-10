@@ -12,4 +12,5 @@ cmake_install.cmake
 database.txt
 
 main
+main2
 test
