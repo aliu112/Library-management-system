@@ -21,6 +21,7 @@ public:
 	void printBooks();
 
 	int bookCount();
+	vector<Book*> getBooks();
 
 	Book* findBook(string title);
 	Book* findBook(uint64_t isbn13);

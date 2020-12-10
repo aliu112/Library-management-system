@@ -75,3 +75,11 @@ int LibraryFacade::findCategory(string name){
     int x = manager.findCategory(name);
     return x;
 }
+
+void LibraryFacade::exportData(string file) {
+    this->manager.exportData(file);
+}
+
+void LibraryFacade::importData(string file) {
+    this->manager.importData(file);
+}

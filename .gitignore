@@ -9,7 +9,8 @@ Makefile
 cmake_install.cmake_install
 cmake_install.cmake
 .vscode/
-
+database.txt
 
 main
+main2
 test
