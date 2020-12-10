@@ -91,6 +91,18 @@ TEST(BookManagerTest, ISBN13ValidCheck) {
 	EXPECT_EQ(4451952310892, book1->getISBN13());
 }
 
+TEST(BookManagerTest, DateInvalidCheck) {
+	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "2-29-1989", 270, 4451952310892);
+	
+	EXPECT_EQ("00-00-0000", book1->getDate());
+}
+
+TEST(BookManagerTest, DateValidCheck) {
+	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "2-29-2000", 270, 4451952310892);
+	
+	EXPECT_EQ("2-29-2000", book1->getDate());
+}
+
 TEST(BookManagerTest, ExportData) {
 	BookManager bookManager = BookManager();
 	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "04-16-1989", 270, 4451952310892);
