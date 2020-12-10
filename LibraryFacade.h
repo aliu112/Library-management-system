@@ -29,6 +29,8 @@ class LibraryFacade{
         void searchBook(string);
         int payDebt();
         int findCategory(string);
+        void exportData(string file);
+        void importData(string file);
 };
 
 #endif //
