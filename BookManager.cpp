@@ -130,6 +130,10 @@ Book* BookManager::findBook(uint64_t isbn13) {
 }
 
 void BookManager::exportData(string file) {
+	const char header = '@';
+	const char endPoint = '$';
+	const char endFile = '%';
+
 	std::ofstream outfile(file);
 	if (!outfile)
 		std::cout << "Error: Unable to create output file" << std::endl;
@@ -140,22 +144,22 @@ void BookManager::exportData(string file) {
 			vector<Book*> currentBooks = this->categories[i]->getBooks();
 
 			// Category title, number of books
-			outfile << "†" << this->categories[i]->getTitle() << "§" << this->categories[i]->bookCount() << std::endl;
+			outfile << header << this->categories[i]->getTitle() << endPoint << this->categories[i]->bookCount() << std::endl;
 			
 			// All the info for one book per line
 			for (auto book : currentBooks)
 			{
-				outfile << book->getTitle() << "§";
-				outfile << book->getAuthor() << "§";
-				outfile << book->getDate() << "§";
-				outfile << book->getPages() << "§";
-				outfile << book->getISBN13() << "§";
+				outfile << book->getTitle() << endPoint;
+				outfile << book->getAuthor() << endPoint;
+				outfile << book->getDate() << endPoint;
+				outfile << book->getPages() << endPoint;
+				outfile << book->getISBN13() << endPoint;
 				outfile << book->isAvailable() << std::endl;
 			}
 		}
 
 		// Not the same as "
-		outfile << "”";
+		outfile << endFile;
 		outfile.close();
 	}
 }
@@ -163,6 +167,10 @@ void BookManager::exportData(string file) {
 // Weird characters were used to ensure that no valid characters mess up the file hierarchy
 // Including characters for other languages
 void BookManager::importData(string file) {
+	const char header = '@';
+	const char endPoint = '$';
+	const char endFile = '%';
+
 	std::ifstream infile(file);
 	if (!infile)
 		std::cout << "Error: Unable to read the given file" << std::endl;
@@ -176,24 +184,23 @@ void BookManager::importData(string file) {
 			int bookCount = 0;
 			std::getline(infile, input);
 
-			if (input == "”")
+			if (input[0] == endFile)
 			{
 				loop = false;
 				break;
 			}
 
 			// Get category header (category title, then number of books)
-			if (input[0] == '†')
+			if (input[0] == header)
 			{
 				// Get rid of the header char
 				input.erase(0, 1);
 
 				// Setup for string splitting
-				const char delim = '§';
 				std::stringstream strstream(input);
 				string hTemp;
 				vector<string> split;
-				while (std::getline(strstream, hTemp, delim))
+				while (std::getline(strstream, hTemp, endPoint))
 				{
 					split.push_back(hTemp);
 				}
@@ -213,13 +220,12 @@ void BookManager::importData(string file) {
 				// Setup stringstream
 				string strTemp;
 				std::getline(infile, strTemp);
-				const char delim = '§';
 				std::stringstream strstream(strTemp);
 
 				// Split the given string based on the delimiter
 				string bTemp;
 				vector<string> split;
-				while (std::getline(strstream, bTemp, delim))
+				while (std::getline(strstream, bTemp, endPoint))
 				{
 					split.push_back(bTemp);
 				}
