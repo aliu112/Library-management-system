@@ -66,14 +66,18 @@ int main()
     cout << "Welcome to the Library Management Sysytem\n";
     while(1)
      {
-        while (cout << "Press enter one of the following\n1. Login\n2. Create an account\n" && !(std::cin >> userInput)) 
+        while (cout << "Press enter one of the following\n0. Exit\n1. Login\n2. Create an account\n" && !(std::cin >> userInput)) 
         {
         std::cin.clear(); //clear bad input flag
         std::cin.ignore(); //discard input
         std::cout << "Invalid input; please re-enter.\n";
         }
- 
-        if (userInput == 1)
+
+        if(userInput ==0)
+        {
+            break;
+        }
+        else if (userInput == 1)
         {
             //Asks user for login
             //if login is invalid user is asked if they would like to try again
@@ -142,6 +146,7 @@ int main()
         
     }
 
+    if(loggedIn ==true)
     cout << "Welcome back\n";
     string userInput2;
     //User Interface, User will use this code to interact w/ the library system
@@ -234,7 +239,7 @@ int main()
             cin.ignore();
             getline(cin,title);
             cout << "Enter author name: ";
-            cin.ignore();
+           // cin.ignore();
             getline(cin,author);
             cout << "Enter publish date (dd-mm-year): ";
             cin >> publishDate;
