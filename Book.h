@@ -14,6 +14,7 @@ public:
 	Book();
 	Book(string title);
 	Book(string title, string author, string datePublished, int numPages, uint64_t isbn13);
+	Book(string title, string author, string datePublished, int numPages, uint64_t isbn13, bool availability);
 	Book(Book* book);
 
 	// Populate virtual function
