@@ -71,6 +71,10 @@ All Library functionality (display, borrow, add, remove, etc...)
 ![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20160657.png)
 ![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20161633.png)
 
+Export function
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/export.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/exportFile.png)
+
  ## Installation/Usage
  Our program is simple and easy to use. You only need to clone the repository and run it inside of the console. Although, you will need Google tests and cmake installed to run it exactly the way we run it.
  ## Testing
