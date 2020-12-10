@@ -55,8 +55,16 @@ int main()
 	std::cout << "After: " << category1->getTitle() << std::endl;
 	bookManager.printCategories();
 
+	// Print out the book manager
 	bookManager.print();
-	std::cout << std::endl << "----------------" << std::endl;
-
+	std::cout << std::endl << "0----------------0" << std::endl;
 	bookManager.printHierarchy();
+
+	bookManager.exportData("database.txt");
+
+	// Showcase the data import function
+	BookManager copiedManager = BookManager();
+	copiedManager.importData("database.txt");
+	std::cout << std::endl << "1----------------1" << std::endl;
+	copiedManager.printHierarchy();
 }

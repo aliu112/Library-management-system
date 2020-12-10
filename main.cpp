@@ -163,6 +163,8 @@ int main()
         cout << "8. Add Category\n";
         cout << "9. Remove Category\n";
         cout << "10. Delete account\n";
+        cout << "11. Export database\n";
+        cout << "12. Import database\n";
         
         cin >> userInput2;
 
@@ -317,13 +319,28 @@ int main()
             }
             
         }
+        else if (userInput2 == "11")
+        {
+            cout << "Please enter a file name for the outputted database" << endl;
+            string file;
+            cin >> file;
+            cout << "Exporting database..." << endl;
+            test.exportData(file);
+            cout << "Done" << endl;
+        }
+        else if (userInput2 == "12")
+        {
+            cout << "Please enter a file name for the input database" << endl;
+            string file;
+            cin >> file;
+            cout << "Importing database..." << endl;
+            test.importData(file);
+            cout << "Done" << endl;
+        }
         else
         {
             cout << "Invalid input\n\n";
         }
-        
-
-        
     }
     cout << "Successfully exited\nThank you for using Library Management System\n";
 

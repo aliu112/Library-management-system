@@ -1,6 +1,6 @@
 #ifndef __library_facade_h__
 #define __library_facade_h__
-#include "OwedDebts.h"
+#include "owedDebts.h"
 #include "BookManager.h"
 #include "Book.h"
 #include "User.h"
@@ -29,6 +29,8 @@ class LibraryFacade{
         void searchBook(string);
         int payDebt();
         int findCategory(string);
+        void exportData(string file);
+        void importData(string file);
 };
 
 #endif //

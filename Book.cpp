@@ -17,7 +17,15 @@ Book::Book(string title, string author, string datePublished, int numPages, uint
 	this->setAvailable(true);
 }
 
-Book::Book(Book* book) : Book(book->getTitle(), book->getAuthor(), book->getDate(), book->getPages(), book->isbn13) {
+Book::Book(string title, string author, string datePublished, int numPages, uint64_t isbn13, bool availability) : Media(title) {
+	this->setAuthor(author);
+	this->setDate(datePublished);
+	this->setPages(numPages);
+	this->setISBN13(isbn13);
+	this->setAvailable(availability);
+}
+
+Book::Book(Book* book) : Book(book->getTitle(), book->getAuthor(), book->getDate(), book->getPages(), book->isbn13, book->isAvailable()) {
 }
 
 Book::Book(string title) : Media(title) {
