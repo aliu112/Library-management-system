@@ -1,5 +1,7 @@
-#include "BookManager.h"
+﻿#include "BookManager.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 BookManager::BookManager() {
 }
@@ -127,6 +129,116 @@ Book* BookManager::findBook(uint64_t isbn13) {
 	return temp;
 }
 
-void BookManager::exportData() {
-	// TODO
+void BookManager::exportData(string file) {
+	std::ofstream outfile(file);
+	if (!outfile)
+		std::cout << "Error: Unable to create output file" << std::endl;
+	else
+	{
+		for (int i = 0; i < this->categories.size(); i++) 
+		{
+			vector<Book*> currentBooks = this->categories[i]->getBooks();
+
+			// Category title, number of books
+			outfile << "†" << this->categories[i]->getTitle() << "§" << this->categories[i]->bookCount() << std::endl;
+			
+			// All the info for one book per line
+			for (auto book : currentBooks)
+			{
+				outfile << book->getTitle() << "§";
+				outfile << book->getAuthor() << "§";
+				outfile << book->getDate() << "§";
+				outfile << book->getPages() << "§";
+				outfile << book->getISBN13() << "§";
+				outfile << book->isAvailable() << std::endl;
+			}
+		}
+
+		// Not the same as "
+		outfile << "”";
+		outfile.close();
+	}
+}
+
+// Weird characters were used to ensure that no valid characters mess up the file hierarchy
+// Including characters for other languages
+void BookManager::importData(string file) {
+	std::ifstream infile(file);
+	if (!infile)
+		std::cout << "Error: Unable to read the given file" << std::endl;
+	else
+	{
+		bool loop = true;
+		while (loop)
+		{
+			string input;
+			string categoryTitle = "";
+			int bookCount = 0;
+			std::getline(infile, input);
+
+			if (input == "”")
+			{
+				loop = false;
+				break;
+			}
+
+			// Get category header (category title, then number of books)
+			if (input[0] == '†')
+			{
+				// Get rid of the header char
+				input.erase(0, 1);
+
+				// Setup for string splitting
+				const char delim = '§';
+				std::stringstream strstream(input);
+				string hTemp;
+				vector<string> split;
+				while (std::getline(strstream, hTemp, delim))
+				{
+					split.push_back(hTemp);
+				}
+
+				// Get the category title
+				categoryTitle = split[0];
+
+				// Get how many books to find
+				bookCount = std::stoi(split[1]);
+			}
+
+			Category* category = new Category(categoryTitle);
+
+			// Iterate through the file to get the needed number of books
+			for (int i = 0; i < bookCount; i++)
+			{
+				// Setup stringstream
+				string strTemp;
+				std::getline(infile, strTemp);
+				const char delim = '§';
+				std::stringstream strstream(strTemp);
+
+				// Split the given string based on the delimiter
+				string bTemp;
+				vector<string> split;
+				while (std::getline(strstream, bTemp, delim))
+				{
+					split.push_back(bTemp);
+				}
+
+				// Cast for ISBN-13 value
+				uint64_t isbn13;
+				std::istringstream iss(split[4]);
+				iss >> isbn13;
+				
+				// Assume false until proven otherwise
+				bool availability = false;
+				if (split[5] == "1")
+					availability = true;
+
+				Book* tempBook = new Book(split[0], split[1], split[2], std::stoi(split[3]), isbn13, availability);
+				category->add(tempBook);
+			}
+
+			this->add(category);
+		}
+	}
 }

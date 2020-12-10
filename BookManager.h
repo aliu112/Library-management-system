@@ -29,5 +29,6 @@ public:
 	void changeBookCategory(string book, string currentCategory, string changeCategory);
 	Book* findBook(string book);
 	Book* findBook(uint64_t isbn13);
-	void exportData();
+	void exportData(string file);
+	void importData(string file);
 };
