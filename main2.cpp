@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
 	// Create sample books and put them in categories
-	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "04-16-1989", 270, 4451952310892);
+	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "2-12-2000", 270, 4451952310892);
 	Book* book2 = new Book("How to Program in C++", "John Doe", "04-16-1989", 270, 1732630091782);
 	Book* book3 = new Book("Satistics for Dummies", "John Doe", "04-16-1989", 270, 7388419576579);
 

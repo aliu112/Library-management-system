@@ -1,5 +1,9 @@
 #include "Book.h"
 #include <iostream>
+#include <sstream>
+#include <vector>
+
+using std::vector;
 
 Book::Book() : Media() {
 	this->setAuthor("None");
@@ -52,7 +56,41 @@ string Book::getAuthor() {
 }
 
 void Book::setDate(string date) {
-	this->datePublished = date;
+	std::stringstream ss(date);
+
+	vector<int> dateCodes;
+	string temp;
+	while (std::getline(ss, temp, '-'))
+	{
+		dateCodes.push_back(std::stoi(temp));
+	}
+
+	bool error = false;
+
+	// [0] = month, [1] = day, [2] = year
+	if (dateCodes[0] < 1 || dateCodes[0] > 12)
+		error = true;
+
+	if (dateCodes[1] < 1 || dateCodes[1] > 31)
+		error = true;
+
+	if (dateCodes[2] < 0 || dateCodes[2] > 9999)
+		error = true;
+
+	// February edge case accounting for leap year
+	if (dateCodes[0] == 2)
+		if (dateCodes[1] == 29)
+		{
+			if (dateCodes[2] % 4 != 0)
+				error = true;
+		}
+		else if (dateCodes[1] > 29)
+			error = true;
+
+	if (error)
+		this->datePublished = "00-00-0000";
+	else
+		this->datePublished = date;
 }
 
 string Book::getDate() {
