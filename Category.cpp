@@ -23,6 +23,10 @@ int Category::bookCount() {
 	return this->list.size();
 }
 
+vector<Book*> Category::getBooks() {
+	return this->list;
+}
+
 Book* Category::findBook(string title) {
 	for (Book* book : this->list)
 		if (title == book->getTitle())
