@@ -75,6 +75,16 @@ Export function
 ![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/export.png)
 ![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/exportFile.png)
 
+Import Function
+
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/import.png)
+
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/import2.png)
+
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/import3.png)
+
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/import4.png)
+
  ## Installation/Usage
  Our program is simple and easy to use. You only need to clone the repository and run it inside of the console. Although, you will need Google tests and cmake installed to run it exactly the way we run it.
  ## Testing
