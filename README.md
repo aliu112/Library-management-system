@@ -47,9 +47,36 @@ This diagram describes how I will be utilizing the composite design pattern to c
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
- > Screenshots of the input/output after running your application
+Exiting before account creation/logging in
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20154204.png)
+
+Invalid Input
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/invalid%20input.png)
+
+Incorrect Login (retry)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20154333.png)
+
+Incorect Login (make new account)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20154422.png)
+
+New Account 
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20154452.png)
+
+All Library functionality (display, borrow, add, remove, etc...)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20154602.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20154629.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20155047.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20155151.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20160321.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20160657.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/Screenshot%202020-12-09%20161633.png)
+
  ## Installation/Usage
- > Instructions on installing and running your application
+ Our program is simple and easy to use. You only need to clone the repository and run it inside of the console. Although, you will need Google tests and cmake installed to run it exactly the way we run it.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ For testing we decided to go with google tests to confirm that our class functions are fully functional before we incorporated it into our interface.
+ 
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/test%20pt1.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/test%20pt2.png)
+![](https://github.com/cs100/final-project-cmahk001-kdo055-aliu112/blob/master/InputOutput/test%20pt3.png)
  
