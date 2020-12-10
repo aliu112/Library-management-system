@@ -237,7 +237,7 @@ int main()
             cin.ignore();
             getline(cin,title);
             cout << "Enter author name: ";
-            cin.ignore();
+           // cin.ignore();
             getline(cin,author);
             cout << "Enter publish date (dd-mm-year): ";
             cin >> publishDate;
