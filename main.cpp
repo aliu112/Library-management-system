@@ -25,9 +25,9 @@ int main()
 	Book* book7 = new Book("A Promised Land", "Barack Obama", "11-17-2020", 768, 9781524763169);
 	Book* book8 = new Book("Becoming", "Michelle Obama", "11-13-2018", 448, 9781524763138);
 	Book* book9 = new Book("Greenlights", "Matthew McConaughey", "10-20-2020", 304, 9780593139134);
-	Book* book10 = new Book("HumanKind", "Yuval Noah Harari", "00-00-2011", 443, 9780062316097);
-	Book* book11 = new Book("A People's History of the Unites States", "Howard Zim", "00-00-1980", 729, 9780060838652);
-	Book* book12 = new Book("Guns, Germs, and Steel", "Jared Diamond", "00-03-1997", 480, 9780393317558);
+	Book* book10 = new Book("HumanKind", "Yuval Noah Harari", "01-01-2011", 443, 9780062316097);
+	Book* book11 = new Book("A People's History of the Unites States", "Howard Zim", "01-01-1980", 729, 9780060838652);
+	Book* book12 = new Book("Guns, Germs, and Steel", "Jared Diamond", "01-03-1997", 480, 9780393317558);
 
 
 	Category* category1 = new Category("Fiction");
