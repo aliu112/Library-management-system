@@ -77,6 +77,20 @@ TEST(BookManagerTest, FindBookUsingISBN13) {
 	EXPECT_EQ("Jacob's Big Adventure", test->getTitle());
 }
 
+TEST(BookManagerTest, ISBN13InvalidCheck) {
+	BookManager bookManager = BookManager();
+	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "04-16-1989", 270, 44519510892);
+	
+	EXPECT_EQ(0, book1->getISBN13());
+}
+
+TEST(BookManagerTest, ISBN13ValidCheck) {
+	BookManager bookManager = BookManager();
+	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "04-16-1989", 270, 4451952310892);
+	
+	EXPECT_EQ(4451952310892, book1->getISBN13());
+}
+
 TEST(BookManagerTest, ExportData) {
 	BookManager bookManager = BookManager();
 	Book* book1 = new Book("Jacob's Big Adventure", "John Doe", "04-16-1989", 270, 4451952310892);
